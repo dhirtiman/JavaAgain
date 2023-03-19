@@ -110,4 +110,9 @@ public class Player {
 
     }
 
+    public void showInventory(){
+        for (Loot item: inventory){
+            System.out.println(item.getName());
+        }
+    }
 }
