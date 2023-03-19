@@ -1,6 +1,57 @@
 public class Player {
     private String handleName;
     private int lives, level, score;
+    private Weapon weapon;
+
+    public Player() {
+        this("PlayerMan");
+    }
+
+    public Player(String handle) {
+        this(handle, 1);
+        // handleName = handle;
+        // lives = 3;
+        // level = 1;
+        // score = 0;
+
+    }
+
+    public Player(String handle, int startingLevel) {
+        // this.handleName = handle;
+        // this.lives = 3;
+        // this.level = startingLevel;
+        // this.score = 0;
+        setHandleName(handle);
+        setLives(3);
+        setlevel(startingLevel);
+        setScore(0);
+        setDefaultWeapon();
+
+    }
+
+    public String getHandleName() {
+        return handleName;
+    }
+
+    public void setHandleName(String handle) {
+        if (handle.length() < 3) {
+            System.out.println(handle + " To Short!");
+            return;
+        }
+        this.handleName = handle;
+        
+    }
+
+    private void setDefaultWeapon() {
+        this.weapon = new Weapon("Sword", 10, 20);
+    }
+
+    public void setNameAndLevel(String name, int level) {
+        // this.handleName = name;
+        // this.level = level;
+        setHandleName(name);
+        setlevel(level);
+    }
 
     public int getLives() {
         return lives;
@@ -26,50 +77,11 @@ public class Player {
         this.score = score;
     }
 
-
-
-    public Player() {
-        this("PlayerMan");
+    public Weapon getWeapon() {
+        return weapon;
     }
 
-    public Player(String handle) {
-        this(handle, 1);
-        // handleName = handle;
-        // lives = 3;
-        // level = 1;
-        // score = 0;
-
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
-
-    public Player(String handle, int startingLevel) {
-        // this.handleName = handle;
-        // this.lives = 3;
-        // this.level = startingLevel;
-        // this.score = 0;
-        setHandleName(handle);
-        setLives(3);
-        setlevel(startingLevel);
-        setScore(0);
-
-    }
-
-    public String getHandleName() {
-        return handleName;
-    }
-
-    public void setHandleName(String handle) {
-        if (handle.length() < 3) {
-            System.out.println(handle+" To Short!");
-            return;
-        }
-        this.handleName = handle;
-    }
-
-    public void setNameAndLevel(String name,int level){
-        // this.handleName = name;
-        // this.level = level;
-        setHandleName(name);
-        setlevel(level);
-    }
-
 }
