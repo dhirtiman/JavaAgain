@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class Player {
     private String handleName;
     private int lives, level, score;
     private Weapon weapon;
+    private ArrayList<Loot> inventory;
 
     public Player() {
         this("PlayerMan");
@@ -26,6 +29,7 @@ public class Player {
         setlevel(startingLevel);
         setScore(0);
         setDefaultWeapon();
+        inventory = new ArrayList<>();
 
     }
 
@@ -39,7 +43,7 @@ public class Player {
             return;
         }
         this.handleName = handle;
-        
+
     }
 
     private void setDefaultWeapon() {
@@ -84,4 +88,26 @@ public class Player {
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
+
+    public ArrayList<Loot> getInventory() {
+        return inventory;
+    }
+
+    // public void setInventory(ArrayList<Loot> inventory) {
+    // this.inventory = inventory;
+    // }
+
+    public void pickUpLoot(Loot newLoot) {
+        inventory.add(newLoot);
+    }
+
+    public Boolean dropLoot(Loot loot) {
+        if (this.inventory.contains(loot)) {
+            inventory.remove(loot);
+            return true;
+        }
+        return false;
+
+    }
+
 }
