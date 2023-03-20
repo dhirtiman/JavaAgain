@@ -10,6 +10,20 @@ public class Demo {
         uglyTroll.showInfo();
         uglyTroll.takeDamage(30);
 
+        System.out.println();
+
+        Vampire vlad =  new Vampire("Vlad");
+        vlad.showInfo();
+        vlad.takeDamage(8);
+        vlad.showInfo();
+
+        System.out.println();
+
+        VampireKing Karrs = new VampireKing("Karrs");
+        Karrs.showInfo();
+        Karrs.takeDamage(8);
+
+
 
     }
 
