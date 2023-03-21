@@ -24,6 +24,7 @@ public class Hero {
 
         // Loot bPotion = new Loot ("Blue Potion",LootType.POTION,6);
         boolean wasDeleted = dk.dropLoot(rPotion);
+        System.out.println(wasDeleted);
         dk.showInventory();
 
 
