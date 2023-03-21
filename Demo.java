@@ -33,6 +33,7 @@ public class Demo {
         
         System.out.println(dk.score());
         dk.dropLoot("Cursed Shield");
+        dk.dropLoot("Red Potion");
 
         System.out.println(dk.score());
 

@@ -111,9 +111,9 @@ public class Player {
     }
 
     public Boolean dropLoot(String lootName) {
-        for (Loot loot : inventory) {
-            if (lootName.equals(loot.getName())) {
-                inventory.remove(loot);
+        for (Loot currentLoot : inventory) {
+            if (lootName.equals(currentLoot.getName())) {
+                inventory.remove(currentLoot);
                 return true;
             }
         }
